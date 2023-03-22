@@ -1,0 +1,23 @@
+<p>page-weather-form works!</p>
+
+<div>
+    <form [formGroup]="cityForm" (ngSubmit)="processForm()">
+        <table>
+            <tr>
+                <td>
+                    <label>City: </label>
+                </td>
+                <td>
+                    <input type="text" formControlName="city">
+                </td>
+                <td>
+                    <button type="submit">Add</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<br>
+<div style="width: 250px">
+    <app-view-weather-form [cities]="cities"></app-view-weather-form>
+</div>

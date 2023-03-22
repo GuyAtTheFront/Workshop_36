@@ -1,0 +1,8 @@
+<table>
+    <!-- (click)="getWeather(city)" -->
+    <tr *ngFor="let city of cities; let idx = index" [routerLink]= "['/', city]">
+        <td>
+            {{ city | titlecase }}
+        </td>
+    </tr>
+</table>

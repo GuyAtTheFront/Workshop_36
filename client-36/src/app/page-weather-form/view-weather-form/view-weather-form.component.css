@@ -1,0 +1,13 @@
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 98%;
+  }
+
+td {
+    padding: 8px;
+}
+
+td:hover {
+    background-color: paleturquoise;
+}

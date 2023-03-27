@@ -33,17 +33,18 @@ public class WeatherService {
         // 5. ResponseEntity.body to get json
         // 6. Unpack json to Model
 
-        UriComponents uri = UriComponentsBuilder
+        String uri = UriComponentsBuilder
                         .fromUriString(URL)
                         .queryParam("q", country)
                         .queryParam("appid", API_KEY)
                         .queryParam("units", "metric")
-                        .build();
+                        .build()
+                        .toUriString();
 
-        // System.out.println(uri);
+        System.out.println(uri);
 
         RequestEntity<Void> req = RequestEntity
-                                    .get(uri.toUriString())
+                                    .get(uri)
                                     .accept(MediaType.APPLICATION_JSON)
                                     .build();
 

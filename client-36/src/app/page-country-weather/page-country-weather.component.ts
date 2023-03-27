@@ -21,7 +21,11 @@ export class PageCountryWeatherComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     const country = this.activatedRoute.snapshot.params["country"];
     this.weatherDataSub = this.weatherService.getWeather$(country)
-                            .subscribe(data => this.weatherData = data as Weather, error => console.log(error));
+                            // .subscribe(data => this.weatherData = data as Weather, error => console.log(error));
+                            .subscribe({
+                              next: (data) => this.weatherData = data as Weather, 
+                              error: (error) => console.log(error)
+                            })
   }
 
   ngOnDestroy(): void {
